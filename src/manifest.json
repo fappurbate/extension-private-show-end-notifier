@@ -1,5 +1,5 @@
 {
-  "name": "dummy",
+  "name": "Private Show End Notifier",
   "version": "0.1.0",
-  "description": ""
+  "description": "Plays a sound on private show end."
 }

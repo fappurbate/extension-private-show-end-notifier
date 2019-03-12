@@ -1,8 +1,33 @@
-const div = document.createElement('div');
-div.style.position = 'fixed';
-div.style.left = '50%';
-div.style.top = '50%';
-div.style.transform = 'translate(-50%, -50%)';
-div.style.fontSize = '3rem';
+let soundId;
 
-div.appendChild(document.createTextNode('Hi!!!!'));
+fb.storage.onChanged.addListener((key, change) => {
+  if (key === 'soundId') {
+    soundId = change.newValue;
+  }
+});
+
+async function bootstrap() {
+  soundId = await fb.storage.get('soundId');
+
+  Vue.component('sound-upload', {
+    template: `
+      <button class="button" @click="onSelect">
+        Select Audio
+      </button>
+    `,
+    methods: {
+      async onSelect() {
+        const result = await fb.gallery.select({ type: 'audio' });
+        if (result) {
+          fb.runtime.emitEvent(['@main'], 'set-sound-id', { soundId: result });
+        }
+      }
+    }
+  });
+
+  const app = new Vue({
+    el: '#root'
+  });
+}
+
+bootstrap();

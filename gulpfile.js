@@ -110,7 +110,7 @@ function task(options = {}) {
       return stream.pipe(sourcemaps.write());
     })();
 
-    const pages = pagesNames.map(page => {
+    const pages = [].concat(...pagesNames.map(page => {
       const template = gulp
         .src(`./src/pages/${page}/index.html`)
         .pipe(rename(`pages/${page}.html`));
@@ -132,7 +132,7 @@ function task(options = {}) {
       })();
 
       return [template, script];
-    }).flat();
+    }));
 
     return merge(
       manifest,
