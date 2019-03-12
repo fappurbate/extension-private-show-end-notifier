@@ -1,0 +1,45 @@
+{
+  "name": "@fappurbate/extension-private-show-end-notifier",
+  "version": "0.1.0",
+  "description": "Know exactly when your private show ends even if not looking at the screen.",
+  "scripts": {
+    "dev": "npx gulp dev",
+    "build": "npx gulp prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fappurbate/extension-private-show-end-notifier.git"
+  },
+  "keywords": [
+    "fappurbate",
+    "extension",
+    "private-show",
+    "chaturbate"
+  ],
+  "author": "Kothique Félixx <kothique@protonmail.ch>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "gulp": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-tar": "^2.1.0",
+    "gulp-uglify-es": "^1.0.4",
+    "gulplog": "^1.0.0",
+    "merge-stream": "^1.0.1",
+    "rollup-plugin-commonjs": "^8.4.0",
+    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-pluginutils": "^2.4.1",
+    "rollup-stream": "^1.24.1",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": ">=10.x.x"
+  },
+  "bugs": {
+    "url": "https://github.com/fappurbate/extension-private-show-end-notifier/issues"
+  },
+  "homepage": "https://github.com/fappurbate/extension-private-show-end-notifier#readme"
+}
